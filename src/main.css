@@ -2,6 +2,20 @@
     transition: all 0.2s;
 }
 
+[data-theme="dark"] {
+    --background-colour: #0d0d0d;
+    --foreground-colour: #433075;
+    --primary-colour: #9D9DCC;
+    --secondary-colour: #a58cf4;
+}
+
+[data-theme="light"] {
+    --background-colour: #1d0933;
+    --foreground-colour: #47375c;
+    --primary-colour: #D3D3FF;
+    --secondary-colour: #9D9DCC;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -13,4 +27,5 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
