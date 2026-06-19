@@ -46,12 +46,15 @@
     cursor: pointer;
     width: fit-content;
     text-align: left;
-    transform: translateX(50%);
-    margin-left: -80%;
     padding: 0.2vw;
 }
 
-#main-menu button:hover {
+#sidebar button {
+    transform: translateX(50%);
+    margin-left: -80%;
+}
+
+#sidebar button:hover {
     margin-left: -10%;
     transform: translateX(0);
     color: var(--secondary-colour);
