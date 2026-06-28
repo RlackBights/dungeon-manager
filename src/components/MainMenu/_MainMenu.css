@@ -1,7 +1,6 @@
 #main-menu {
     width: 100%;
     height: 100%;
-    
 }
 
 #main-menu * {
@@ -10,43 +9,17 @@
 
 #main-menu > #sidebar {
     position: absolute;
-    left: 3vw;
+    left: 0;
     top: 0;
     height: 100vh;
     width: 25vw;
+    background-color: var(--foreground-colour);
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-}
-
-#sidebar::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 15%;
-    height: 100%;
-    width: 5%;
-    background-color: var(--metal-shade);
-    mask-image: url(../../assets/chain.svg);
-    background-repeat: repeat-y;
-    z-index: -3;
-    color: var(--metal-shade);
-}
-
-#sidebar::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 15%;
-    height: 100%;
-    width: 5%;
-    background-color: var(--metal-shade);
-    mask-image: url(../../assets/chain.svg);
-    background-repeat: repeat-y;
-    z-index: -3;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+    overflow: hidden;
 }
 
 #main-menu h1 {
@@ -56,6 +29,7 @@
 #sidebar > div {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     flex-direction: column;
     height: 60%;
     row-gap: 2vh;
@@ -68,20 +42,40 @@
     font-size: 2vw;
     border: none;
     outline: none;
+    background-color: transparent;
     cursor: pointer;
-    text-align: center;
-    background-color: var(--secondary-colour);
-    border-bottom: 9px solid var(--metal-shade);
-    border-top: 9px solid var(--metal-light);
-    border-left: 9px solid var(--metal-shade);
-    border-right: 9px solid var(--metal-light);
-    box-sizing: border-box;
-    padding: 0;
-    width: 100%;
+    width: fit-content;
+    text-align: left;
+    padding: 0.2vw;
+}
+
+#sidebar button {
+    transform: translateX(50%);
+    margin-left: -80%;
+}
+
+#sidebar button:hover {
+    margin-left: -10%;
+    transform: translateX(0);
+    color: var(--secondary-colour);
+    font-weight: bold;
 }
 
 #main-menu #login {
-    margin-bottom: 5vh;
+    margin-top: 35vh;
+}
+
+#main-menu button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0d0d0d;
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    transform: translateX(-50%);
 }
 
 #main-menu > #campaign-container {
@@ -90,8 +84,8 @@
     right: 0;
     height: 100vh;
     width: 100vw;
-    background-image: url(../../assets/Parchment.png);
-    z-index: -5;
+    background-color: var(--background-colour);
+    z-index: -1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -100,9 +94,6 @@
     box-sizing: border-box;
     flex-wrap: wrap;
     column-gap: 1vw;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 #campaign-container > .campaign-card {

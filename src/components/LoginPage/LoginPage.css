@@ -1,0 +1,126 @@
+#login-page {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(../../assets/Parchment.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+}
+
+
+#chain-left{
+    position: absolute;
+    top: 0;
+    left: 30vw;
+    mask-image: url(../../assets/chain.svg);
+    background-color: var(--metal-shade);
+    background-size: 2vw;
+    background-repeat: no-repeat;
+    width: 2vw;
+    height: 35vh;
+    rotate: -25deg;
+    translate: 0vw -2vh;
+}
+
+#chain-right{
+    position: absolute;
+    top: 0;
+    right: 30vw;
+    mask-image: url(../../assets/chain.svg);
+    background-color: var(--metal-shade);
+    background-repeat: repeat-y;
+    width: 2vw;
+    height: 35vh;
+    rotate: 25deg;
+    translate: 0vw -2vh;
+
+}
+
+#login-form{
+    z-index: 1;
+    text-align: center;
+    position: relative;
+    width: 35vw;
+    height: 42vh;
+    row-gap: 2vh;
+
+}
+
+#login-form::before{
+    content: "";
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 2vw;
+    mask-image: url(../../assets/chain.svg);
+    background-color: var(--metal-shade);
+    background-repeat: repeat-y;
+    width: 2vw;
+    height: 100%;
+    z-index: -1;
+}
+
+#login-form::after{
+    content: "";
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 2vw;
+    mask-image: url(../../assets/chain.svg);
+    background-color: var(--metal-shade);
+    background-repeat: repeat-y;
+    width: 2vw;
+    height: 100%;
+    z-index: -1;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2vh;
+}
+
+
+form > input, button{
+    font-size: larger;
+    background-color: var(--foreground-colour);
+    color: black;
+    border-bottom: var(--metal-shade)  solid 1vw;
+    border-left: var(--metal-shade)  solid 1vw;
+    border-top: var(--metal-light)  solid 1vw;
+    border-right: var(--metal-light)  solid 1vw;
+    height: 8vh;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#info{
+    font-family: cursive;
+    font-style: italic;
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../../assets/tornpaper_tmp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#options{
+    font-family: cursive;
+    font-style: italic;
+    padding: 3vw;
+    background-image: url(../../assets/tornpaper_tmp.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}

@@ -1,15 +1,18 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import './MainMenu.css'
-import { ThemeContext } from '../Page/Page'
 import { Themes } from '../../models/themeModel';
+import { useNavigate } from 'react-router';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 export default function MainMenu()
 {
     const { theme, setTheme } = useContext(ThemeContext);
+    const navigate = useNavigate();
     
     const themes = Object.keys(Themes);
     return (
         <div id='main-menu'>
+            {/*  */}
             <button id='set-theme' onClick={() => {
                 setTheme(curr => themes[(themes.indexOf(curr) + 1) % (themes.length)] as Themes);
 
@@ -19,11 +22,15 @@ export default function MainMenu()
             <div id='sidebar'>
                 <h1>[Projekt név]</h1>
                 <div>
-                    <button id='profile'>Profile</button>
+                    <button id='profile' onClick={() => {
+                        navigate('/profile');
+                    }}>Profile</button>
                     <button id='characters'>Characters</button>
                     <button id='create'>Create</button>
-                    <button id='login'>Login</button>
                 </div>
+                <button id='login' onClick={() => {
+                    navigate('/login');
+                }}>Login</button>
             </div>
             <div id='campaign-container'>
                 {new Array(10).fill(0).map((_, i) => (
